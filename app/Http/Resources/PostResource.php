@@ -9,11 +9,11 @@ class PostResource extends JsonResource
 {
     public $status;
     public $message;
-    public $data;
+    public $resource;
 
-    public function __construct($status, $message, $data)
+    public function __construct($status, $message, $resource)
     {
-        parent::__construct($data);
+        parent::__construct($resource);
         $this->status = $status;
         $this->message = $message;
     }
@@ -29,7 +29,7 @@ class PostResource extends JsonResource
         return [
             'status' => $this->status,
             'message' => $this->message,
-            'data' => $this->data,
+            'data' => $this->resource,
             // 'data' => [
             //     'id' => $this->id,
             //     'title' => $this->title,

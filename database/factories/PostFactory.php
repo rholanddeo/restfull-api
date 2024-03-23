@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,12 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
-            //
+            'title' => $this->faker->sentence,
+            'content' => $this->faker->paragraph,
+            'slug' => $this->faker->slug,
+            'image' => $this->faker->image('public/storage/posts', 640, 480, null, false),
         ];
     }
 }
